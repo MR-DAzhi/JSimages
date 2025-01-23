@@ -484,10 +484,10 @@ async function handleRootRequest(request, USERNAME, PASSWORD, enableAuth) {
 </body>
 </html>  
 `, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+  response.headers.set('Cache-Control', 'max-age=300');
   await cache.put(cacheKey, response.clone());
   return response;
 }
-
 async function handleAdminRequest(DATABASE, request, USERNAME, PASSWORD) {
   if (!authenticate(request, USERNAME, PASSWORD)) {
     return new Response('Unauthorized', { status: 401, headers: { 'WWW-Authenticate': 'Basic realm="Admin"' } });
@@ -759,7 +759,8 @@ async function generateAdminPage(DATABASE) {
       }
       navigator.clipboard.writeText(formattedLinks).then(() => {
         alert('复制成功');
-      }).catch((err) => {
+      }).catch((
+	  err) => {
         alert('复制失败');
       });
     }
@@ -864,7 +865,6 @@ async function fetchMediaData(DATABASE) {
   mediaData.sort((a, b) => b.timestamp - a.timestamp);
   return mediaData.map(({ url }) => ({ url }));
 }
-
 async function handleUploadRequest(request, DATABASE, enableAuth, USERNAME, PASSWORD, domain, R2_BUCKET, maxSize) {
   try {
     const formData = await request.formData();
@@ -926,7 +926,7 @@ async function handleImageRequest(request, DATABASE, R2_BUCKET) {
 
 async function handleBingImagesRequest(request) {
   const cache = caches.default;
-  const cacheKey = new Request('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=5');
+  const cacheKey = new Request(`https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=5&t=${Date.now()}`);
   const cachedResponse = await cache.match(cacheKey);
   if (cachedResponse) return cachedResponse;
   const res = await fetch(cacheKey);
@@ -937,6 +937,7 @@ async function handleBingImagesRequest(request) {
   const images = bingData.images.map(image => ({ url: `https://cn.bing.com${image.url}` }));
   const returnData = { status: true, message: "操作成功", data: images };
   const response = new Response(JSON.stringify(returnData), { status: 200, headers: { 'Content-Type': 'application/json' } });
+  response.headers.set('Cache-Control', 'max-age=3600');
   await cache.put(cacheKey, response.clone());
   return response;
 }

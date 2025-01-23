@@ -23,6 +23,10 @@
 <details>
 <summary>历史更新记录</summary>
 
+### 2025-1-23
+- 修改代码 handleRootRequest 和 handleBingImagesRequest 函数
+- 添加了缓存控制头和随机参数。
+
 ### 2024-12-18
 - 更新管理界面样式
 - 移除前端的文件类型和文件大小限制

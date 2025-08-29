@@ -56,10 +56,10 @@ async function handleRootRequest(request, USERNAME, PASSWORD, enableAuth) {
   <meta name="keywords" content="JSimages,Workers图床, Pages图床,R2储存, Cloudflare, Workers, 图床">
   <title>JSimages-基于CloudFlare的图床服务</title>
   <link rel="icon" href="https://p1.meituan.net/csc/c195ee91001e783f39f41ffffbbcbd484286.ico" type="image/x-icon">
-  <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/twitter-bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-fileinput/5.2.7/css/fileinput.min.css" rel="stylesheet" />
-  <link href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/toastr.js/2.1.4/toastr.min.css" rel="stylesheet" />
-  <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.4/css/all.min.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.7/css/fileinput.min.css" integrity="sha512-qPjB0hQKYTx1Za9Xip5h0PXcxaR1cRbHuZHo9z+gb5IgM6ZOTtIH4QLITCxcCp/8RMXtw2Z85MIZLv6LfGTLiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" integrity="sha512-6S2HWzVFxruDlZxI3sXOZZ4/eJ8AcxkQH1+JjSe/ONCEqR9L4Ysq5JdT5ipqtzU7WHalNwzwBv+iE51gNHJNqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
       body {
           margin: 0;
@@ -180,11 +180,11 @@ async function handleRootRequest(request, USERNAME, PASSWORD, enableAuth) {
               <div id="cacheContent" style="display: none;"></div>
           </form>
       </div>
-      <p class="project-link">项目在 GitHub 上开源 - <a href="https://github.com/MR-DAzhi/JSimages" target="_blank" rel="noopener noreferrer">MR-DAzhi/JSimages</a></p>
-      <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js" type="application/javascript"></script>
-      <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-fileinput/5.2.7/js/fileinput.min.js" type="application/javascript"></script>
-      <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-fileinput/5.2.7/js/locales/zh.min.js" type="application/javascript"></script>
-      <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/toastr.js/2.1.4/toastr.min.js" type="application/javascript"></script>
+      <p class="project-link">项目开源于 GitHub - <a href="https://github.com/0-RTT/JSimages" target="_blank" rel="noopener noreferrer">0-RTT/JSimages</a></p>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.7/js/fileinput.min.js" integrity="sha512-CCLv901EuJXf3k0OrE5qix8s2HaCDpjeBERR2wVHUwzEIc7jfiK9wqJFssyMOc1lJ/KvYKsDenzxbDTAQ4nh1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.7/js/locales/zh.min.js" integrity="sha512-IizKWmZY3aznnbFx/Gj8ybkRyKk7wm+d7MKmEgOMRQDN1D1wmnDRupfXn6X04pwIyKFWsmFVgrcl0j6W3Z5FDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script>
       async function fetchBingImages() {
         const response = await fetch('/bing-images');
@@ -484,10 +484,10 @@ async function handleRootRequest(request, USERNAME, PASSWORD, enableAuth) {
 </body>
 </html>  
 `, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
-  response.headers.set('Cache-Control', 'max-age=300');
   await cache.put(cacheKey, response.clone());
   return response;
 }
+
 async function handleAdminRequest(DATABASE, request, USERNAME, PASSWORD) {
   if (!authenticate(request, USERNAME, PASSWORD)) {
     return new Response('Unauthorized', { status: 401, headers: { 'WWW-Authenticate': 'Basic realm="Admin"' } });
@@ -759,8 +759,7 @@ async function generateAdminPage(DATABASE) {
       }
       navigator.clipboard.writeText(formattedLinks).then(() => {
         alert('复制成功');
-      }).catch((
-	  err) => {
+      }).catch((err) => {
         alert('复制失败');
       });
     }
@@ -865,6 +864,7 @@ async function fetchMediaData(DATABASE) {
   mediaData.sort((a, b) => b.timestamp - a.timestamp);
   return mediaData.map(({ url }) => ({ url }));
 }
+
 async function handleUploadRequest(request, DATABASE, enableAuth, USERNAME, PASSWORD, domain, R2_BUCKET, maxSize) {
   try {
     const formData = await request.formData();
@@ -926,7 +926,7 @@ async function handleImageRequest(request, DATABASE, R2_BUCKET) {
 
 async function handleBingImagesRequest(request) {
   const cache = caches.default;
-  const cacheKey = new Request(`https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=5&t=${Date.now()}`);
+  const cacheKey = new Request('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=5');
   const cachedResponse = await cache.match(cacheKey);
   if (cachedResponse) return cachedResponse;
   const res = await fetch(cacheKey);
@@ -937,7 +937,6 @@ async function handleBingImagesRequest(request) {
   const images = bingData.images.map(image => ({ url: `https://cn.bing.com${image.url}` }));
   const returnData = { status: true, message: "操作成功", data: images };
   const response = new Response(JSON.stringify(returnData), { status: 200, headers: { 'Content-Type': 'application/json' } });
-  response.headers.set('Cache-Control', 'max-age=3600');
   await cache.put(cacheKey, response.clone());
   return response;
 }
